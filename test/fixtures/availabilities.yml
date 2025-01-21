@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tutor: one
+  day: MyString
+  start_time: 2025-01-21 17:56:44
+  end_time: 2025-01-21 17:56:44
+
+two:
+  tutor: two
+  day: MyString
+  start_time: 2025-01-21 17:56:44
+  end_time: 2025-01-21 17:56:44
