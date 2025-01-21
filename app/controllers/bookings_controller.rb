@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
+
     def create
         booking = Booking.new(booking_params)
         if booking.save
@@ -19,5 +22,5 @@ class BookingsController < ApplicationController
     def booking_params
         params.require(:booking).permit(:student_id, :tutor_id, :day, :time_slot)
     end
-    
+
 end
