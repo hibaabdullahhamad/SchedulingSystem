@@ -29,3 +29,43 @@ The database schema includes four main tables:
 
 ---
 
+## Instructions for Setup and Usage
+
+1. **System Requirements**
+   - Ruby version: >= 3.0.0
+   - Rails version: >= 7.0.0
+   - PostgreSQL as the database
+
+2. **Setup**
+   - Clone the repository
+     
+     ```
+     git clone https://github.com/hibaabdullahhamad/SchedulingSystem.git
+     cd scheduling_system
+     ```
+
+   - Install dependencies
+
+     ```
+     bundle install
+     ```
+     
+   - Setup the database
+   - 
+     ```
+     rails db:create
+     rails db:migrate
+     ```
+     
+   - Start the rails server
+  
+     ```
+     rails s
+     ```
+3. **Testing API's**
+   - Use Curl commands to interact with the APIs.
+   - Reference the [API Documentation](Scheduling_System_API) for details on implemented API features and paths
+
+
+  
+     
