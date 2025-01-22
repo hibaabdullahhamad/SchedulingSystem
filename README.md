@@ -25,7 +25,7 @@ The database schema includes four main tables:
 3. **Availabilities**: Tracks tutor availability (`tutor_id`, `day`, `start_time`, `end_time`, `time_zone`).
 4. **Bookings**: Records bookings between students and tutors (`student_id`, `tutor_id`, `day`, `time_slot`).
 
-![Database Schema Diagram](/Users/hibahamad/scheduling_system/ERD.png)
+![Database Schema Diagram](ERD.png)
 
 ---
 
