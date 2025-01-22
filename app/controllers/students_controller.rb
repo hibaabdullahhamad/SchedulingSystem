@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
         end_time = params[:end_time]
         student_time_zone = params[:time_zone]
       
-        # Extract availabilities with chosen subject
+        # Fetch tutors with matching availability
         tutors = Tutor.joins(:availabilities)
                       .where(subject: subject)
                       .where('availabilities.day = ?', day)
@@ -25,21 +25,25 @@ class StudentsController < ApplicationController
                       .where('availabilities.end_time >= ?', end_time)
       
         if tutors.any?
-          # Convert tutor availability to the student's time zone
+          # Convert tutor availabilities to student time zone
           tutors_with_converted_availability = tutors.map do |tutor|
-            tutor.as_json(include: {
-              availabilities: {
-                only: [:day, :start_time, :end_time],
-                methods: :converted_availability_to_student_time_zone
-              }
-            })
-        end
-        
-        render json: tutors_with_converted_availability
+            {
+              id: tutor.id,
+              first_name: tutor.first_name,
+              last_name: tutor.last_name,
+              subject: tutor.subject,
+              availabilities: tutor.availabilities.map do |availability|
+                availability.converted_availability_to_student_time_zone(student_time_zone)
+              end
+            }
+          end
+      
+          render json: tutors_with_converted_availability
         else
           render json: { message: 'No tutors available for the given criteria' }, status: :not_found
         end
     end
+      
       
 
     private
