@@ -64,7 +64,7 @@ The database schema includes four main tables:
      ```
 3. **Testing API's**
    - Use Curl commands to interact with the APIs.
-   - Reference the [API Documentation](Scheduling_System_API) for details on implemented API features and paths
+   - Reference the [API Documentation](Scheduling_System_API.docx) for details on implemented API features and paths
 
 
   
